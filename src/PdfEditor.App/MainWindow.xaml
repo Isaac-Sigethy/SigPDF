@@ -1,0 +1,79 @@
+<Window
+    x:Class="PdfEditor.App.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="PDF Editor">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <MenuBar Grid.Row="0" AutomationProperties.Name="Application menu">
+            <MenuBarItem Title="File">
+                <MenuFlyoutItem
+                    x:Name="ExitMenuItem"
+                    Text="Exit"
+                    Click="ExitMenuItem_Click"
+                    AutomationProperties.Name="Exit" />
+            </MenuBarItem>
+            <MenuBarItem Title="Edit" />
+            <MenuBarItem Title="View" />
+        </MenuBar>
+
+        <CommandBar Grid.Row="1" DefaultLabelPosition="Right" AutomationProperties.Name="Page tools">
+            <AppBarButton
+                Label="Select"
+                Icon="Pictures"
+                IsEnabled="False"
+                AutomationProperties.Name="Select tool" />
+        </CommandBar>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border
+                Grid.Column="0"
+                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                BorderThickness="0,0,1,0"
+                Padding="12">
+                <TextBlock
+                    Text="Thumbnails"
+                    Style="{StaticResource SubtitleTextBlockStyle}"
+                    AutomationProperties.Name="Thumbnail sidebar" />
+            </Border>
+
+            <Grid Grid.Column="1" Padding="24">
+                <TextBlock
+                    x:Name="ViewportMessageText"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource BodyTextBlockStyle}"
+                    TextWrapping="WrapWholeWords"
+                    AutomationProperties.Name="Document viewport" />
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="3" Padding="12,8" ColumnSpacing="16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                x:Name="StatusTextBlock"
+                VerticalAlignment="Center"
+                AutomationProperties.Name="Document status" />
+            <TextBlock
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                Text="Zoom"
+                AutomationProperties.Name="Zoom" />
+        </Grid>
+    </Grid>
+</Window>

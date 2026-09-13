@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>PdfEditor.Engine</RootNamespace>
+    <AssemblyName>PdfEditor.Engine</AssemblyName>
+    <Description>Concrete PDF engine adapter. The adapter implementation is added in M2.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PdfEditor.Core\PdfEditor.Core.csproj" />
+  </ItemGroup>
+</Project>

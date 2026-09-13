@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>PdfEditor.Rendering</RootNamespace>
+    <AssemblyName>PdfEditor.Rendering</AssemblyName>
+    <Description>PDF render orchestration using Core engine abstractions.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PdfEditor.Core\PdfEditor.Core.csproj" />
+  </ItemGroup>
+</Project>
